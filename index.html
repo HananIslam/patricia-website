@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leadership Coaching for New Managers | McGee and Associates, [City, Province]</title>
-<meta name="description" content="Leadership coaching for new managers in [City, Province] and across Canada. Take the free Leadership Self-Assessment or book a free 30-minute intro call with Patricia McGee.">
+<title>Leadership Coaching for New Managers | McGee and Associates, London, Ontario</title>
+<meta name="description" content="Leadership coaching for new managers in London, Ontario and across Canada. Take the free Leadership Self-Assessment or book a free 30-minute intro call with Patricia McGee.">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap">
 <!--
-  LocalBusiness schema: add once Patricia confirms her city and province.
-  Name, address and phone must match her Google Business Profile exactly.
+  LocalBusiness schema: city is London, Ontario, Canada.
+  Add it once the street address and phone match her Google Business Profile exactly.
 
 -->
 <style>
@@ -178,7 +178,9 @@ main>section{padding:clamp(44px,5.5vw,76px) 0}
 .pain h3{font-size:25px;line-height:1.2;color:var(--maroon)}
 .pain p{color:#5A3E3A;line-height:1.5}
 /* ASSESSMENT: a compact band. The form card is the visual. */
-#assessment{scroll-margin-top:90px}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:96px}
+#hero{scroll-margin-top:0}
 .assess{background:linear-gradient(132deg,transparent 30%,rgba(196,84,104,.3) 48%,rgba(196,84,104,.08) 62%,transparent 74%),var(--ink);color:var(--on-dark);border-radius:36px;padding:clamp(24px,3.6vw,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:clamp(24px,5vw,72px);align-items:center}
 .assess-copy{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
 .assess .tag{background:var(--gold);border-color:var(--gold);color:var(--text);box-shadow:none}
@@ -309,16 +311,19 @@ main>section{padding:clamp(44px,5.5vw,76px) 0}
 .ask span{display:block;color:var(--muted);font-size:16px;margin:2px 0 12px}
 .ask .btn{padding:10px 20px;font-size:15px}
 .faq{counter-reset:q}
-.faq details{counter-increment:q;background:var(--paper);border:1px solid rgba(255,255,255,.9);box-shadow:0 2px 6px -2px rgba(79,12,20,.08);border-radius:20px;transition:background-color .25s,box-shadow .25s}
+.faq details{counter-increment:q;background:var(--paper);border:1px solid rgba(255,255,255,.9);box-shadow:0 2px 6px -2px rgba(79,12,20,.08);border-radius:20px;transition:background-color .45s var(--ease),box-shadow .45s var(--ease)}
 .faq details+details{margin-top:12px}
 .faq details[open]{background:var(--gold-soft);box-shadow:var(--lift)}
+.faq details.is-closing{background:var(--paper);box-shadow:0 2px 6px -2px rgba(79,12,20,.08)}
 .faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;padding:22px 22px 22px 26px;font-family:var(--serif);font-size:22px;line-height:1.3;border-radius:20px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::before{content:counter(q,decimal-leading-zero);font-family:var(--sans);font-size:14px;font-weight:700;color:var(--gold-text)}
-.faq summary::after{content:"";width:40px;height:40px;border-radius:50%;background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234F0C14' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") center/20px no-repeat;transition:transform .3s var(--ease),background-color .25s}
+.faq summary::after{content:"";width:40px;height:40px;border-radius:50%;background:var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234F0C14' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") center/20px no-repeat;transition:transform .45s var(--ease),background-color .45s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg);background-color:var(--paper)}
-.faq details p{padding:0 80px 26px 62px;color:#4F4033;animation:answer .35s var(--ease)}
-@keyframes answer{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.faq details.is-closing summary::after{transform:none;background-color:var(--cream)}
+.faq-panel{overflow:hidden}
+.faq details[open] > .faq-panel{height:auto}
+.faq details p{padding:0 80px 26px 62px;color:#4F4033}
 
 /* ALSO: kept small on purpose. Each card is one link. */
 .also-title{text-align:center;font-size:clamp(24px,2.4vw,30px);margin-bottom:20px}
@@ -420,6 +425,7 @@ body.is-loading{overflow:hidden}
   .wall::before,.wall::after{display:none}
   .row{width:auto;min-width:0;align-self:stretch;flex-wrap:wrap;justify-content:center}
   .row [aria-hidden="true"]{display:none}
+  html{scroll-behavior:auto}
   *,*::before,*::after{transition:none !important}
 }
 </style>
@@ -437,16 +443,16 @@ body.is-loading{overflow:hidden}
 
 <div class="nav-bar">
   <header class="nav">
-    <a href="/" class="brand" aria-label="McGee and Associates, home"><svg class="mark" viewBox="0 0 558 325" aria-hidden="true"><use href="#mg-mark"/></svg><span class="wordmark"><span class="w1">McGee</span><span class="w2">&amp; Associates</span></span></a>
+    <a href="#hero" class="brand" aria-label="McGee and Associates, home"><svg class="mark" viewBox="0 0 558 325" aria-hidden="true"><use href="#mg-mark"/></svg><span class="wordmark"><span class="w1">McGee</span><span class="w2">&amp; Associates</span></span></a>
     <nav class="nav-links" id="site-nav" aria-label="Main">
-      <a href="/" aria-current="page">Home</a>
-      <a href="/about">About</a>
-      <a href="/services">Services</a>
-      <a href="/assessment">Assessment</a>
-      <a href="/contact">Contact</a>
-      <a class="btn btn-maroon nav-menu-cta" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a free call</a>
+      <a href="#hero" aria-current="page">Home</a>
+      <a href="#about">About</a>
+      <a href="#toolkit">Services</a>
+      <a href="https://mcgeeandassociates.ca/">Assessment</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-maroon nav-menu-cta" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a free call</a>
     </nav>
-    <a class="btn btn-maroon nav-cta" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a free call</a>
+    <a class="btn btn-maroon nav-cta" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a free call</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open menu</span><span class="burger" aria-hidden="true"></span></button>
   </header>
 </div>
@@ -455,14 +461,14 @@ body.is-loading{overflow:hidden}
 
 <div class="top">
 <!-- 1. HERO -->
-<section aria-labelledby="hero-title">
+<section id="hero" aria-labelledby="hero-title">
   <div class="wrap hp">
     <div class="hp-copy">
       <h1 id="hero-title"><span class="lit">Lead with confidence,</span><span class="quiet">not guesswork.</span></h1>
       <p class="lead">Most managers are never taught how to lead people. I help new managers become leaders that people want to follow.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#assessment">Take the free self-assessment</a>
-        <a class="btn btn-ghost" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a free call</a>
+        <a class="btn btn-gold" href="https://mcgeeandassociates.ca/">Take the free self-assessment</a>
+        <a class="btn btn-ghost" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a free call</a>
       </div>
     </div>
     <figure class="hp-photo">
@@ -515,7 +521,7 @@ body.is-loading{overflow:hidden}
           <li>A short video from me</li>
         </ul>
       </div>
-      <form class="lead-form" id="lead-form" action="/assessment" method="get" novalidate>
+      <form class="lead-form" id="lead-form" action="https://mcgeeandassociates.ca/" method="get" novalidate>
         <h3>Get your personalised results</h3>
         <p class="form-sub">Add your details and start the assessment.</p>
         <div class="field">
@@ -534,7 +540,7 @@ body.is-loading{overflow:hidden}
 </section>
 
 <!-- 4. WHY PATRICIA -->
-<section class="section" aria-labelledby="about-title">
+<section class="section" id="about" aria-labelledby="about-title">
   <div class="wrap about">
     <div class="collage">
       <img src="img/patricia-with-class.jpg" alt="Patricia in the middle of a class of her leadership students, everyone smiling for a group selfie" width="1400" height="1050" loading="lazy">
@@ -546,7 +552,7 @@ body.is-loading{overflow:hidden}
       <h2 id="about-title" class="h2">I've done it. Learned it. Lived it.</h2>
       <p class="lead">I came up through the ranks with three promotions in three years, so I know how hard the leap into leadership is.</p>
       <p style="color:var(--muted)">Since then I've spent over 30 years in management and taught leadership to post-graduate college students. Now I help new leaders make that transition smoother than mine was.</p>
-      <a class="btn btn-outline" href="/about">More about my story</a>
+      <a class="btn btn-outline" href="#about">More about my story</a>
     </div>
   </div>
 </section>
@@ -715,7 +721,7 @@ body.is-loading{overflow:hidden}
       </dl>
     </div>
     <div class="offer-cta">
-      <a class="btn btn-maroon" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a free call</a>
+      <a class="btn btn-maroon" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a free call</a>
       <small>We'll talk about your needs and whether this is the right fit.</small>
     </div>
   </div>
@@ -732,7 +738,7 @@ body.is-loading{overflow:hidden}
       </div>
       <div class="ask">
         <img src="img/patricia-portrait.jpg" alt="" width="900" height="900" loading="lazy">
-        <div><strong>Have a different question?</strong><span>Ask me on a free 30-minute call.</span><a class="btn btn-outline" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a call</a></div>
+        <div><strong>Have a different question?</strong><span>Ask me on a free 30-minute call.</span><a class="btn btn-outline" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a call</a></div>
       </div>
     </div>
     <div class="faq">
@@ -769,7 +775,7 @@ body.is-loading{overflow:hidden}
 </section>
 
 <!-- 10. FREE GUIDES -->
-<section class="section" aria-labelledby="tools-title">
+<section class="section" id="guides" aria-labelledby="tools-title">
   <div class="wrap">
     <div class="head">
       <span class="tag">Free resources</span>
@@ -809,7 +815,7 @@ body.is-loading{overflow:hidden}
   <div class="wrap">
     <h2 id="also-title" class="also-title">Also available</h2>
     <div class="paths">
-      <a class="path" href="/contact">
+      <a class="path" href="#contact">
         <span><h3>For organizations</h3><p>Custom leadership development programs for your managers, available on request.</p></span>
         <span class="go" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
       </a>
@@ -822,13 +828,13 @@ body.is-loading{overflow:hidden}
 </section>
 
 <!-- 12. FINAL CTA -->
-<section aria-labelledby="cta-title">
+<section id="contact" aria-labelledby="cta-title">
   <div class="wrap">
     <div class="final">
       <h2 id="cta-title">Not sure where to start?</h2>
       <p class="lead">Book a free 30-minute intro call. No pressure, just a conversation about where you are and where you want to go.</p>
-      <a class="btn btn-maroon" href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book your free call</a>
-      <a class="link" href="#assessment">Or take the self-assessment first</a>
+      <a class="btn btn-maroon" href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book your free call</a>
+      <a class="link" href="https://mcgeeandassociates.ca/">Or take the self-assessment first</a>
     </div>
   </div>
 </section>
@@ -841,31 +847,31 @@ body.is-loading{overflow:hidden}
       <div class="foot-brand">
         <div class="brand brand-foot" role="img" aria-label="McGee and Associates"><svg class="mark" viewBox="0 0 558 325" aria-hidden="true"><use href="#mg-mark"/></svg><span class="wordmark"><span class="w1">McGee</span><span class="w2">&amp; Associates</span></span></div>
         <div class="motto">BUILD GROW SOAR</div>
-        <p>Leadership coaching for new managers. Based in [City, Province], working with managers across Canada and beyond.</p>
+        <p>Leadership coaching for new managers. Based in London, Ontario, Canada, working with managers across Canada and beyond.</p>
       </div>
       <nav aria-label="Footer">
         <h3>Explore</h3>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#toolkit">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div>
         <h3>Start here</h3>
         <ul>
-          <li><a href="#assessment">Free self-assessment</a></li>
-          <li><a href="https://calendly.com/mcgee-p2010/30-minute-intro-call">Book a free call</a></li>
-          <li><a href="#tools-title">Free guides</a></li>
+          <li><a href="https://mcgeeandassociates.ca/">Free self-assessment</a></li>
+          <li><a href="https://calendly.com/mcgee-p2010/let-s-chat?month=2026-11">Book a free call</a></li>
+          <li><a href="#guides">Free guides</a></li>
         </ul>
       </div>
       <div>
         <h3>Get in touch</h3>
         <ul>
-          <li><a href="/contact">Send a message</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li>[City, Province]</li>
+          <li><a href="#contact">Send a message</a></li>
+          <li><a href="https://www.linkedin.com/in/mcgeepatricia/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li>London, Ontario, Canada</li>
         </ul>
       </div>
     </div>
@@ -983,7 +989,7 @@ body.is-loading{overflow:hidden}
   },{rootMargin:'80px'}).observe(wall);
 })();
 (function(){
-  /* Assessment sign-up: check the two fields, keep them for the assessment page, then go there. */
+  /* Assessment sign-up: check the two fields, then open her assessment. */
   var f=document.getElementById('lead-form'); if(!f) return;
   var note=document.getElementById('lead-note'), nameEl=document.getElementById('lead-name'), mailEl=document.getElementById('lead-email');
   f.addEventListener('submit',function(e){
@@ -992,12 +998,75 @@ body.is-loading{overflow:hidden}
     if(!name){ note.textContent='Please add your first name.'; nameEl.focus(); return; }
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ note.textContent='Please check your email address.'; mailEl.focus(); return; }
     try{ sessionStorage.setItem('mcgee_lead', JSON.stringify({name:name,email:email})); }catch(err){}
-    var live=/mcgeeandassociates\.ca$|netlify\.app$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
-    if(live){ location.href=f.getAttribute('action'); }
-    else{ note.textContent='Thanks, '+name+'. On the live site this opens the assessment with your details filled in.'; }
+    location.href=f.getAttribute('action');
   });
 })();
-/* Until the Kit form URL is set, show a friendly note instead of submitting. */
+(function(){
+  /* Answers ease open and shut. The name attribute is removed so the browser does not snap the previous one closed. */
+  var items=[].slice.call(document.querySelectorAll('.faq details'));
+  if(!items.length) return;
+  var ease='height .45s cubic-bezier(.2,.7,.2,1)';
+  items.forEach(function(d){
+    var p=d.querySelector(':scope > p');
+    if(!p) return;
+    var panel=document.createElement('div');
+    panel.className='faq-panel';
+    d.insertBefore(panel, p);
+    panel.appendChild(p);
+    panel.style.height=d.open?'auto':'0px';
+  });
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  items.forEach(function(d){ d.removeAttribute('name'); });
+  function paint(panel, from, to, done){
+    panel.style.overflow='hidden';
+    panel.style.transition='none';
+    panel.style.height=from;
+    panel.offsetHeight;
+    panel.style.transition=ease;
+    panel.style.height=to;
+    panel.addEventListener('transitionend', function end(ev){
+      if(ev.target!==panel || ev.propertyName!=='height') return;
+      panel.removeEventListener('transitionend', end);
+      done();
+    });
+  }
+  function openItem(d){
+    var panel=d.querySelector('.faq-panel');
+    var token=String(Date.now()+Math.random());
+    d.dataset.faq=token;
+    d.classList.remove('is-closing');
+    d.open=true;
+    panel.style.transition='none';
+    panel.style.height='0px';
+    panel.offsetHeight;
+    paint(panel, '0px', panel.scrollHeight+'px', function(){
+      if(d.dataset.faq!==token) return;
+      panel.style.height='auto';
+    });
+  }
+  function closeItem(d){
+    var panel=d.querySelector('.faq-panel');
+    var token=String(Date.now()+Math.random());
+    d.dataset.faq=token;
+    d.classList.add('is-closing');
+    paint(panel, panel.getBoundingClientRect().height+'px', '0px', function(){
+      if(d.dataset.faq!==token) return;
+      d.open=false;
+      d.classList.remove('is-closing');
+    });
+  }
+  items.forEach(function(d){
+    d.querySelector('summary').addEventListener('click', function(e){
+      e.preventDefault();
+      if(d.open && !d.classList.contains('is-closing')){
+        closeItem(d);
+      } else if(!d.open){
+        items.forEach(function(other){ if(other!==d && other.open) closeItem(other); });
+        openItem(d);
+      }
+    });
+  });
+})();
 (function(){
   var f=document.getElementById('guides-form');
   if(!f) return;
