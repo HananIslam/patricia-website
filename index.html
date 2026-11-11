@@ -401,15 +401,14 @@ footer{margin-top:clamp(24px,3vw,40px);background:linear-gradient(132deg,transpa
 }
 .preloader{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;background:var(--cream);transition:opacity .5s ease,visibility .5s ease}
 .preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
-.preloader-lockup{display:flex;flex-direction:column;align-items:center;gap:22px}
-.preloader-mark{width:min(156px,46vw);height:auto;color:var(--maroon)}
-.preloader-line{width:72px;height:2px;border-radius:2px;background:var(--line);overflow:hidden}
-.preloader-line i{display:block;height:100%;background:var(--maroon);transform-origin:left center;animation:preloader-bar 1.15s var(--ease) infinite}
-@keyframes preloader-bar{0%{transform:scaleX(0)}55%{transform:scaleX(1)}100%{transform:translateX(100%) scaleX(.35)}}
+.preloader-brand{display:flex;align-items:center;gap:14px}
+.preloader-mark{width:48px;height:auto;flex:none;color:var(--maroon)}
+.preloader-name{display:flex;flex-direction:column;gap:6px;padding-left:14px;border-left:1px solid rgba(79,12,20,.2)}
+.preloader-w1{font-family:var(--serif);font-weight:500;font-size:28px;line-height:.9;letter-spacing:-0.02em;color:var(--ink)}
+.preloader-w2{font-size:11px;line-height:1;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-text)}
 body.is-loading{overflow:hidden}
 @media (prefers-reduced-motion: reduce){
-  .hp-copy>*,.hp-photo,.hp-trust,.hp h1 .lit,.row,.preloader-line i{animation:none}
-  .preloader-line i{transform:scaleX(1)}
+  .hp-copy>*,.hp-photo,.hp-trust,.hp h1 .lit,.row{animation:none}
   .wall{-webkit-mask-image:none;mask-image:none;padding-left:16px;padding-right:16px}
   .row{width:auto;flex-wrap:wrap;justify-content:center}
   .row [aria-hidden="true"]{display:none}
@@ -422,9 +421,9 @@ body.is-loading{overflow:hidden}
 <!-- Her MG mark, drawn in the site maroon. The name beside it is set in the site typefaces. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mg-mark" viewBox="0 0 558 325"><path fill="currentColor" d="M0 318.001H60.3243V109.814L182.984 237.542H199.07L304.638 107.803C323.942 80.4466 348.205 66.2322 357.924 62.5445C431.922 35.1886 489.297 69.9199 508.735 90.7051L551.968 52.4872C512.556 14.6716 453.103 2.53585 428.303 1.19492C337.414 -8.46012 277.157 42.7652 258.389 69.5848L188.011 158.089L43.2324 13.2637H0V318.001Z M291.568 158.089L242.303 222.456C273.671 295.673 352.562 320.683 388.086 324.035C474.149 332.081 537.222 287.829 558 264.697V139.986H407.189V187.255H496.67V245.588C470.932 264.898 445.059 271.737 435.341 272.743C374.212 281.593 336.141 253.634 324.746 238.548C298.203 216.019 291.568 175.522 291.568 158.089Z"/></symbol></defs></svg>
 <div class="preloader" id="preloader" aria-hidden="true">
-  <div class="preloader-lockup">
+  <div class="preloader-brand">
     <svg class="preloader-mark" viewBox="0 0 558 325" aria-hidden="true"><use href="#mg-mark"/></svg>
-    <span class="preloader-line"><i></i></span>
+    <span class="preloader-name"><span class="preloader-w1">McGee</span><span class="preloader-w2">&amp; Associates</span></span>
   </div>
 </div>
 
@@ -459,7 +458,7 @@ body.is-loading{overflow:hidden}
       </div>
     </div>
     <figure class="hp-photo">
-      <img src="img/patricia-cutout.webp" alt="Patricia McGee, leadership coach, smiling" width="735" height="908">
+      <img src="img/patricia-cutout2.webp" alt="Patricia McGee, leadership coach, smiling" width="1470" height="1816">
     </figure>
     <ul class="hp-trust" aria-label="Patricia's experience">
       <li><strong>30+ years</strong>in management</li>
