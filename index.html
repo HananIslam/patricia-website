@@ -222,17 +222,7 @@ main>section{padding:clamp(44px,5.5vw,76px) 0}
 .offer-cta small{font-size:16px;color:var(--muted)}
 
 /* METHOD: one panel, four small scenes that follow the same conversation from model to real life */
-.coach-band{position:relative}
-.blobs{position:absolute;inset:-40px 0;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;will-change:transform}
-.b1{width:620px;height:620px;left:2%;top:0;background:radial-gradient(closest-side,rgba(226,140,128,.95),rgba(226,140,128,.45) 55%,transparent);animation:blob-a 13s ease-in-out infinite alternate}
-.b2{width:680px;height:680px;right:0;top:28%;background:radial-gradient(closest-side,rgba(134,176,142,.95),rgba(134,176,142,.45) 55%,transparent);animation:blob-b 16s ease-in-out infinite alternate}
-.b3{width:580px;height:580px;left:18%;bottom:2%;background:radial-gradient(closest-side,rgba(188,70,92,.7),rgba(188,70,92,.3) 55%,transparent);animation:blob-c 14s ease-in-out infinite alternate}
-@keyframes blob-a{50%{transform:translate(340px,180px) scale(1.25)}100%{transform:translate(120px,520px) scale(.9)}}
-@keyframes blob-b{50%{transform:translate(-420px,-160px) scale(.8)}100%{transform:translate(-160px,-460px) scale(1.2)}}
-@keyframes blob-c{50%{transform:translate(380px,-220px) scale(1.2)}100%{transform:translate(-80px,-520px) scale(.9)}}
-.coach-band .wrap{position:relative}
-.coach{background:rgba(255,252,248,.5);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,.95);box-shadow:var(--lift);border-radius:36px;padding:clamp(32px,4vw,52px) clamp(12px,2vw,28px) clamp(24px,3vw,40px)}
+.coach{background:var(--paper);border:1px solid rgba(255,255,255,.95);box-shadow:var(--lift);border-radius:36px;padding:clamp(32px,4vw,52px) clamp(12px,2vw,28px) clamp(24px,3vw,40px)}
 .coach{text-align:center}
 .coach .steps-line{text-align:left}
 .coach .tag{background:var(--cream);border-color:var(--line);box-shadow:none;margin-bottom:16px}
@@ -409,7 +399,7 @@ footer{margin-top:clamp(24px,3vw,40px);background:linear-gradient(132deg,transpa
   .foot-brand{grid-column:1/-1}
   footer{border-radius:28px 28px 0 0}
 }
-@media (prefers-reduced-motion: reduce){.hp-copy>*,.hp-photo,.hp-trust,.hp h1 .lit,.tag::after,.blob{animation:none}
+@media (prefers-reduced-motion: reduce){.hp-copy>*,.hp-photo,.hp-trust,.hp h1 .lit,.tag::after{animation:none}
 *,*::before,*::after{transition:none !important}}
 </style>
 </head>
@@ -533,8 +523,7 @@ footer{margin-top:clamp(24px,3vw,40px);background:linear-gradient(132deg,transpa
 </section>
 
 <!-- 5. HOW SHE COACHES -->
-<section class="coach-band" aria-labelledby="method-title">
-  <div class="blobs" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<section aria-labelledby="method-title">
   <div class="wrap">
     <div class="coach">
       <span class="tag">My coaching method</span>
